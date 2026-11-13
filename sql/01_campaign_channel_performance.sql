@@ -1,7 +1,6 @@
 -- 01_campaign_channel_performance.sql
 -- SQL dialect: DuckDB (also broadly compatible with PostgreSQL).
 -- Source: daily_performance for delivery metrics; conversions for event attribution.
--- Scope: all dates present in the source Parquet tables.
 -- IMPORTANT: daily_performance.conversion_value and conversions.revenue are
 -- different measures and are reported separately, never added together.
 
@@ -49,7 +48,8 @@ LEFT JOIN channels ch ON c.channel_id = ch.channel_id
 LEFT JOIN campaign_delivery cd ON c.campaign_id = cd.campaign_id
 ORDER BY c.campaign_id;
 
--- 2. Channel performance: aggregate raw totals first, then calculate rates.
+-- 2. Channel performance: include all channels, aggregate raw totals first,
+-- then calculate rates. Cost/return metrics are NULL for zero-spend channels.
 WITH channel_delivery AS (
     SELECT
         c.channel_id,
@@ -77,15 +77,19 @@ SELECT
     CASE WHEN cd.spend > 0
          THEN ROUND(cd.spend / NULLIF(cd.clicks, 0), 2) END AS cpc,
     CASE WHEN cd.spend > 0
+         THEN ROUND(1000.0 * cd.spend / NULLIF(cd.impressions, 0), 2) END AS cpm,
+    CASE WHEN cd.spend > 0
          THEN ROUND(cd.spend / NULLIF(cd.platform_conversions, 0), 2) END AS cpa,
     CASE WHEN cd.spend > 0
-         THEN ROUND(cd.platform_conversion_value / cd.spend, 2) END AS roas
+         THEN ROUND(cd.platform_conversion_value / cd.spend, 2) END AS roas,
+    CASE WHEN cd.spend > 0
+         THEN ROUND(100.0 * (cd.platform_conversion_value - cd.spend) / cd.spend, 2) END AS roi_pct
 FROM channels ch
 LEFT JOIN channel_delivery cd ON ch.channel_id = cd.channel_id
 ORDER BY spend DESC, ch.channel_id;
 
 -- 3. Conversion-event attribution by last-touch channel.
--- Uses conversions.revenue; this is a separate measure from conversion_value.
+-- Uses conversions.revenue; this is separate from daily conversion_value.
 SELECT
     ch.channel_id,
     ch.channel_name,
