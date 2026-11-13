@@ -1,0 +1,6 @@
+table,primary_key,null_keys,duplicate_key_values
+channels,channel_id,0,0
+campaigns,campaign_id,0,0
+ad_groups,ad_group_id,0,0
+daily_performance,performance_id,0,0
+conversions,conversion_id,0,0

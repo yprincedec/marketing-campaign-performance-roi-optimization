@@ -1,0 +1,6 @@
+table,rows,duplicate_rows,total_missing_cells,columns_with_missing
+ad_groups,3000,0,0,0
+campaigns,600,0,127,1
+channels,9,0,0,0
+conversions,40000,0,0,0
+daily_performance,260000,0,0,0

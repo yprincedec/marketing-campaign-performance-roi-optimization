@@ -1,0 +1,7 @@
+relationship,unmatched_child_rows
+campaigns.channel_id -> channels.channel_id,0
+ad_groups.campaign_id -> campaigns.campaign_id,0
+daily_performance.ad_group_id -> ad_groups.ad_group_id,0
+conversions.ad_group_id -> ad_groups.ad_group_id,0
+conversions.first_touch_channel_id -> channels.channel_id,0
+conversions.last_touch_channel_id -> channels.channel_id,0
