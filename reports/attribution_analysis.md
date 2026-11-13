@@ -32,6 +32,27 @@ Compare how channel-level conversion-event counts and attributed revenue change 
 | Retargeting | 4,242 | $351,423.48 | 4,333 | $353,842.44 |
 | Paid Search | 4,365 | $351,264.83 | 4,386 | $358,511.55 |
 
+## First-touch to last-touch change
+
+Change is calculated as last-touch minus first-touch attribution.
+
+| Channel | Conversion change | Revenue change |
+|---|---:|---:|
+| Paid Search | +21 | +$7,246.72 |
+| Video | -20 | +$5,090.88 |
+| Display | +68 | +$3,692.12 |
+| Retargeting | +91 | +$2,418.96 |
+| Email | -9 | +$2,231.18 |
+| Organic Search | +48 | +$2,215.56 |
+| Direct | -40 | -$4,953.54 |
+| Affiliate | -50 | -$5,421.12 |
+| Paid Social | -109 | -$12,520.76 |
+
+- Paid Search has the largest positive attributed revenue change (+$7,246.72).
+- Paid Social has the largest negative attributed revenue change (-$12,520.76).
+- Display gains the most conversion-event credit (+68), while Retargeting has +91 events; Retargeting's count gain is actually the largest.
+- These changes describe reassignment of credit between two attribution rules, not revenue gained or lost by changing marketing activity.
+
 ## Interpretation
 - Paid Social receives the highest revenue credit when the first recorded touch gets credit.
 - Video receives the highest revenue credit under last-touch attribution.
@@ -46,4 +67,5 @@ Compare how channel-level conversion-event counts and attributed revenue change 
 
 ## Reproducibility
 - Results: [attribution_comparison.csv](attribution_comparison.csv)
+- Attribution change: [attribution_change.csv](attribution_change.csv)
 - SQL: [01_campaign_channel_performance.sql](../sql/01_campaign_channel_performance.sql), including the combined first-touch/last-touch comparison query.
