@@ -112,3 +112,28 @@ FROM conversions cv
 JOIN channels ch ON cv.first_touch_channel_id = ch.channel_id
 GROUP BY ch.channel_id, ch.channel_name
 ORDER BY attributed_revenue DESC, ch.channel_id;
+
+-- 5. Side-by-side first-touch vs last-touch conversion-event attribution.
+-- The OR join brings in a conversion once per matching channel; FILTER assigns
+-- it independently to first-touch and/or last-touch for that channel.
+SELECT
+    ch.channel_id,
+    ch.channel_name,
+    COUNT(*) FILTER (
+        WHERE cv.first_touch_channel_id = ch.channel_id
+    ) AS first_touch_conversions,
+    SUM(cv.revenue) FILTER (
+        WHERE cv.first_touch_channel_id = ch.channel_id
+    ) AS first_touch_revenue,
+    COUNT(*) FILTER (
+        WHERE cv.last_touch_channel_id = ch.channel_id
+    ) AS last_touch_conversions,
+    SUM(cv.revenue) FILTER (
+        WHERE cv.last_touch_channel_id = ch.channel_id
+    ) AS last_touch_revenue
+FROM channels ch
+LEFT JOIN conversions cv
+    ON cv.first_touch_channel_id = ch.channel_id
+    OR cv.last_touch_channel_id = ch.channel_id
+GROUP BY ch.channel_id, ch.channel_name
+ORDER BY first_touch_revenue DESC, ch.channel_id;
