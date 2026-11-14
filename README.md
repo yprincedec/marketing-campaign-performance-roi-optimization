@@ -1,56 +1,44 @@
 # Marketing Campaign Performance & ROI Optimization
 
-> A marketing analytics project using Python, SQL, and Power BI to evaluate campaign effectiveness, compare channel performance, and identify opportunities to improve marketing return.
+> End-to-end marketing analytics project using Python, SQL, and Power BI to evaluate campaign effectiveness, compare channel performance, investigate attribution, and identify opportunities to improve marketing return.
 
-## Project Overview
+## Project at a glance
 
-This project analyzes campaign, channel, daily performance, and conversion data to understand how marketing activity translates into engagement, conversions, and business value. It combines data-quality checks, analytical reports, attribution comparisons, and an interactive Power BI dashboard.
+| Area | Details |
+|---|---|
+| Source tables | 5 |
+| Records inspected | 303,609 across source tables |
+| Campaigns | 600 |
+| Marketing channels | 9 |
+| Ad groups | 3,000 |
+| Power BI pages | 4 |
+| Tools | Python, Pandas, SQL, DuckDB, Power BI |
 
-## Business Questions
+## Business questions
 
-- Which campaigns generate the highest revenue and return?
-- How do marketing channels compare on spend, conversion value, ROAS, and ROI?
+- Which campaigns generate the highest conversion value and return?
+- How do channels compare on spend, conversions, ROAS, and ROI?
 - How do first-touch and last-touch attribution views differ?
-- Where should campaign budgets be reviewed or optimized?
+- Which campaigns and channels require budget review?
+- What data-quality or date-coverage limitations affect interpretation?
 
-## Tools & Technologies
+## Dashboard
 
-- **Python** — data inspection, analysis, and visualizations
-- **SQL** — campaign and channel analysis
-- **Power BI** — interactive dashboard and executive summary
-- **Pandas / NumPy / Matplotlib** — data handling and analysis
-- **Git & GitHub** — version control and project documentation
+[Open the interactive Power BI report](powerbi/Marketing_Campaign_Performance_Dashboard.pbix) with Power BI Desktop.
 
-## Power BI Dashboard
+### Dashboard previews
 
-[Open the Power BI dashboard file](powerbi/Marketing_Campaign_Performance_Dashboard.pbix)
+| Campaign Overview | Channel Analysis |
+|---|---|
+| ![Campaign Overview](visuals/Campaign_Overview.png) | ![Channel Analysis](visuals/Channel_Analysis.png) |
 
-The interactive report contains four pages:
+| Attribution Analysis | Executive Summary |
+|---|---|
+| ![Attribution Analysis](visuals/Attribution_Analysis.png) | ![Executive Summary](visuals/Executive_Summary.png) |
 
-1. **Campaign Overview** — headline KPIs, top campaigns by revenue and ROI, and channel distribution.
-2. **Channel Analysis** — channel-level revenue, ROAS, ROI, and revenue-versus-spend comparisons.
-3. **Attribution Analysis** — first-touch versus last-touch conversions and revenue, including channel-level change.
-4. **Executive Summary** — key performance indicators, business insights, and optimization recommendations.
+The report includes headline KPIs, top campaigns by revenue and ROI, channel comparisons, first-touch vs last-touch attribution, executive insights, and optimization recommendations.
 
-### Dashboard Previews
-
-**1. Campaign Overview**
-
-![Campaign Overview](visuals/Campaign_Overview.png)
-
-**2. Channel Analysis**
-
-![Channel Analysis](visuals/Channel_Analysis.png)
-
-**3. Attribution Analysis**
-
-![Attribution Analysis](visuals/Attribution_Analysis.png)
-
-**4. Executive Summary**
-
-![Executive Summary](visuals/Executive%20Summary.png)
-
-## Key Dashboard Results
+## Key results
 
 | KPI | Result |
 |---|---:|
@@ -60,48 +48,60 @@ The interactive report contains four pages:
 | Overall ROI | -22.09% |
 | Campaigns | 600 |
 
-**Interpretation:** The overall ROAS is below 1.0x, and the reported ROI is negative. This indicates that the measured conversion value is below the recorded advertising spend. Paid campaigns and channels should therefore be reviewed before increasing budgets. Channels with zero recorded spend should not be ranked using ROAS or ROI.
+The measured conversion value is below recorded advertising spend in this dataset. The result suggests reviewing paid campaign efficiency before increasing budgets. Zero-spend channels should be evaluated separately rather than ranked by ROAS or ROI.
 
-*Metric note: the dashboard's revenue KPI uses the analyzed daily performance conversion-value measure. Conversion-event totals are maintained separately because the dataset's date coverage and aggregation do not reconcile directly; the two measures are not forced to match.*
+**Metric caveat:** the dashboard revenue KPI uses the analyzed daily-performance `conversion_value` measure. The conversion-event `revenue` total is a separate measure; date coverage and aggregation differ, so these totals are not forced to reconcile.
 
-## Data Quality & Analysis
+## Workflow and methodology
 
-Initial inspection covered five source tables:
+1. Inspect source schemas, row counts, relationships, and date coverage.
+2. Validate primary keys, foreign keys, missing values, and data-quality conditions.
+3. Analyze campaign and channel performance using SQL/Python exports.
+4. Compare first-touch and last-touch attribution.
+5. Build the four-page Power BI dashboard and summarize business recommendations.
 
-| Table | Rows | Columns |
-|---|---:|---:|
-| ad_groups | 3,000 | 5 |
-| campaigns | 600 | 7 |
-| channels | 9 | 4 |
-| conversions | 40,000 | 8 |
-| daily_performance | 260,000 | 8 |
+## Repository structure
 
-Documented checks include duplicate and primary-key checks, foreign-key validation, missing-value review, date coverage diagnostics, and performance-total comparisons. For example, `campaigns.ended_on` contains 127 missing values; these are preserved as unknown rather than inferred. Daily performance and conversion-event totals have a documented reconciliation limitation.
+```text
+.
+├── data/           # Data layout guidance; raw/processed local folders
+├── docs/           # Data dictionary and metric definitions
+├── notebooks/      # Python inspection notebook
+├── powerbi/        # Interactive Power BI report
+├── reports/        # CSV, Parquet, and Markdown analysis outputs
+├── sql/            # SQL analysis and schema definitions
+├── visuals/        # Four exported dashboard page previews
+├── archive/        # Original project and dashboard asset ZIP archives
+├── requirements.txt
+└── README.md
+```
 
-## Repository Structure
+## Reproducibility
 
-- `notebooks/` — Python data-inspection notebook
-- `reports/` — analysis notes, CSV exports, diagnostics, and supporting data files
-- `sql/` — SQL analysis queries and reconstructed schema
-- `docs/` — data dictionary and project documentation
-- `powerbi/` — Power BI report file
-- `visuals/` — exported dashboard page previews
-- `data/` — dataset organization notes and data directories
+Create a Python environment and install the dependencies:
 
-## Recommendations
+```bash
+python -m venv .venv
+pip install -r requirements.txt
+jupyter notebook
+```
 
-- Review campaigns with persistently weak ROAS before allocating additional spend.
-- Investigate high-spend channels with negative ROI and identify the drivers of poor return.
+Start with [the data inspection notebook](notebooks/01_data_inspection.ipynb). See the [data dictionary](docs/data_dictionary.md), [analysis reports](reports/README.md), and [SQL documentation](sql/README.md) for details.
+
+## Key findings and recommendations
+
+- Review campaigns with persistently weak ROAS before assigning additional spend.
+- Investigate high-spend channels with negative ROI and identify the causes.
 - Compare first-touch and last-touch attribution before making channel-level budget decisions.
-- Monitor CPA, ROAS, ROI, and conversion quality together rather than relying on clicks or impressions alone.
-- Treat zero-spend channels separately when evaluating cost-efficiency metrics.
+- Monitor CPA, ROAS, ROI, and conversion quality together.
+- Keep zero-spend channels separate when interpreting cost-efficiency metrics.
 
-## Project Status
+## Project status
 
-**Analysis and dashboard completed.** The repository includes the data-inspection notebook, SQL queries, exported analytical reports, attribution comparisons, the four-page Power BI dashboard, and screenshots of all four dashboard pages.
+**Analysis and dashboard completed.** The repository contains the inspection notebook, SQL assets, analytical exports, attribution comparisons, data-quality diagnostics, the four-page Power BI report, and all four dashboard previews.
 
 ## Author
 
 **Prince Yadav**
 
-[GitHub Repository](https://github.com/yprincedec/marketing-campaign-performance-roi-optimization)
+[GitHub repository](https://github.com/yprincedec/marketing-campaign-performance-roi-optimization)
