@@ -1,5 +1,9 @@
-# Power BI
+# Power BI Dashboard
 
-The Power BI report and supporting assets will be added here after data preparation and metric validation.
+The completed interactive report is stored in this folder:
 
-Planned dashboard areas include campaign overview, channel comparison, conversion performance, and budget efficiency. Visuals and KPIs will be based on validated definitions rather than assumed field equivalence.
+- `Marketing_Campaign_Performance_Dashboard.pbix`
+
+The report contains four pages: Campaign Overview, Channel Analysis, Attribution Analysis, and Executive Summary. It includes campaign and channel KPIs, revenue and spend comparisons, attribution views, key insights, and business recommendations.
+
+Open the PBIX file with Power BI Desktop to explore the report.
