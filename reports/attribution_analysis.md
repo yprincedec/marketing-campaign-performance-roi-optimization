@@ -50,7 +50,7 @@ Change is calculated as last-touch minus first-touch attribution.
 
 - Paid Search has the largest positive attributed revenue change (+$7,246.72).
 - Paid Social has the largest negative attributed revenue change (-$12,520.76).
-- Display gains the most conversion-event credit (+68), while Retargeting has +91 events; Retargeting's count gain is actually the largest.
+- Retargeting gains the most conversion-event credit (+91), followed by Display (+68).
 - These changes describe reassignment of credit between two attribution rules, not revenue gained or lost by changing marketing activity.
 
 ## Interpretation
