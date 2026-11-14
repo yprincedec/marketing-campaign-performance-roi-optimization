@@ -86,7 +86,7 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-Start with [the data inspection notebook](notebooks/01_data_inspection.ipynb). See the [data dictionary](docs/data_dictionary.md), [analysis reports](reports/README.md), and [SQL documentation](sql/README.md) for details.
+Start with [the data inspection notebook](notebooks/01_data_inspection.ipynb). Place `Marketing Campaign Performance & ROI Optimization.zip` beside the notebook for local Jupyter, or upload the ZIP when prompted in Google Colab. The notebook detects both environments and saves compact inspection outputs to `inspection_outputs/`. See the [data dictionary](docs/data_dictionary.md), [analysis reports](reports/README.md), and [SQL documentation](sql/README.md) for details.
 
 ## Key findings and recommendations
 
