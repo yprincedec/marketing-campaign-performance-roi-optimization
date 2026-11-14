@@ -4,7 +4,7 @@ This folder contains the project outputs generated during data inspection and ma
 
 ## Markdown analysis
 
-- `data_inspection_findings.md` — initial data profile and quality observations.
+- `data_inspection_findings.md` — structural data profile, quality checks, and documented reconciliation limitations.
 - `campaign_performance_analysis.md` — campaign-level performance findings.
 - `channel_performance_analysis.md` — channel comparison and cost-efficiency findings.
 - `attribution_analysis.md` — first-touch and last-touch attribution interpretation.
