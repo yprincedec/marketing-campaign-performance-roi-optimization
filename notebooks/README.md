@@ -1,10 +1,7 @@
 # Notebooks
 
-Reproducible analysis notebooks will be added here as the project progresses.
+This folder contains the reproducible Python notebook used for initial dataset inspection:
 
-Planned sequence:
-1. `01_data_inspection.ipynb` — load the Parquet files, inspect schemas, row counts, relationships, and data quality.
-2. `02_data_cleaning.ipynb` — document and apply justified cleaning steps.
-3. `03_exploratory_analysis.ipynb` — explore campaign, channel, and conversion performance.
+- `01_data_inspection.ipynb` — table schemas, row counts, relationships, data-quality checks, and initial diagnostics.
 
-Notebook outputs and conclusions will be committed only after they have been checked against executed results.
+Supporting analysis outputs and exported reports are available in `../reports/`.
