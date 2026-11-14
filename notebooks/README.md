@@ -2,9 +2,9 @@
 
 ## Available notebook
 
-- [`01_data_inspection.ipynb`](01_data_inspection.ipynb) — inspects the five source tables, schema, row counts, relationships, data quality, date coverage, and initial diagnostics.
+- [`01_data_inspection.ipynb`](01_data_inspection.ipynb) — inspects the five source tables, schema, row counts, primary/foreign keys, missing values, duplicate rows, and initial diagnostics.
 
-The notebook is the reproducible starting point for understanding the data. Supporting CSV, Parquet, and Markdown outputs are maintained in [`reports/`](../reports/README.md).
+The notebook runs in Google Colab or local Jupyter. For local use, place the original project ZIP beside the notebook; in Colab, upload it when prompted. The notebook is the starting point for inspecting the source data. Supporting CSV, Parquet, and Markdown outputs are maintained in [`reports/`](../reports/README.md).
 
 ## Environment setup
 
