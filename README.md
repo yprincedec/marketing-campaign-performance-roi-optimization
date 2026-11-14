@@ -86,7 +86,7 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-Start with [the data inspection notebook](notebooks/01_data_inspection.ipynb). Place `Marketing Campaign Performance & ROI Optimization.zip` beside the notebook for local Jupyter, or upload the ZIP when prompted in Google Colab. The notebook detects both environments and saves compact inspection outputs to `inspection_outputs/`. See the [data dictionary](docs/data_dictionary.md), [analysis reports](reports/README.md), and [SQL documentation](sql/README.md) for details.
+Start with [the data inspection notebook](notebooks/01_data_inspection.ipynb). Place `Marketing Campaign Performance & ROI Optimization.zip` beside the notebook for local Jupyter, or upload the ZIP when prompted in Google Colab. The committed notebook is the data-inspection entry point; the campaign, channel, and attribution analyses are preserved as SQL, CSV/Parquet exports, and Markdown reports in the repository. The notebook should not be mistaken for a single end-to-end notebook that regenerates every report and dashboard asset. See the [data dictionary](docs/data_dictionary.md), [analysis reports](reports/README.md), and [SQL documentation](sql/README.md) for details.
 
 ## Key findings and recommendations
 
@@ -98,7 +98,7 @@ Start with [the data inspection notebook](notebooks/01_data_inspection.ipynb). P
 
 ## Project status
 
-**Analysis and dashboard completed.** The repository contains the inspection notebook, SQL assets, analytical exports, attribution comparisons, data-quality diagnostics, the four-page Power BI report, and all four dashboard previews.
+**Analysis outputs and dashboard are committed.** The repository contains a data-inspection notebook, SQL assets, analytical exports, attribution comparisons, data-quality diagnostics, the four-page Power BI report, and all four dashboard previews. The committed notebook covers inspection; the complete analysis is represented by the SQL scripts and saved report outputs rather than one end-to-end analysis notebook. A fresh rerun of all analysis outputs and an independent PBIX interaction check remain pending.
 
 ## Author
 
