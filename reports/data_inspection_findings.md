@@ -2,7 +2,7 @@
 
 **Project:** Marketing Campaign Performance & ROI Optimization  
 **Inspection date:** 2026-11-13  
-**Status:** Initial inspection complete; metric reconciliation and cleaning are still pending.
+**Status:** Initial structural inspection and documented analysis outputs are complete. Semantic reconciliation between daily-performance metrics and conversion-event metrics remains unresolved; this limitation is explicitly carried through the campaign, channel, and attribution reports.
 
 ## Dataset inventory
 
@@ -62,9 +62,10 @@ The 34,992 unmatched groups are outside the observed date range for their respec
 1. Preserve the 127 missing campaign end dates; do not impute or infer campaign status.
 2. Review the supplied SQL schema and clarify the definitions/grain of daily performance conversions, conversion events, conversion value, and revenue.
 3. Keep daily performance metrics and conversion-event metrics separate until reconciliation rules are established.
-4. Continue with documented cleaning and exploratory analysis only after these definitions are understood.
-5. Do not publish a definitive ROI/ROAS result until its numerator, denominator, attribution basis, and date coverage are validated.
+4. Keep the two metric families separate in dashboards and reporting; do not force a reconciliation or merge their totals.
+5. Treat campaign/channel ROAS and ROI as platform-reported conversion-value efficiency measures only, not net-profit or causal ROI.
+6. Revisit semantic reconciliation only when authoritative source definitions and date-coverage rules are available.
 
 ## Scope note
 
-These are initial inspection findings. Passing the tested checks does not establish that the dataset is free of all quality issues or that every business metric is semantically comparable.
+These findings document the completed structural inspection and the known limitations carried into downstream analysis. Passing the tested checks does not establish that the dataset is free of all quality issues or that every business metric is semantically comparable.
