@@ -38,4 +38,4 @@
 - Before reallocating budget, compare first-touch and last-touch event attribution, validate the conversion-value/revenue definitions, and examine campaign-level and time-based performance.
 
 ## Reproducibility
-The channel and campaign SQL queries are maintained in `sql/01_campaign_channel_performance.sql`. The channel CSV export was generated in Colab at `/content/analysis_outputs/channel_performance.csv`; it has not yet been committed as a repository file.
+The channel and campaign SQL queries are maintained in `sql/01_campaign_channel_performance.sql`. The channel CSV export is committed at [`channel_performance.csv`](channel_performance.csv).
