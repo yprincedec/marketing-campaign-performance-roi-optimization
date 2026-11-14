@@ -46,4 +46,4 @@ All 161 zero-spend campaigns belong to unpaid channels in the observed data. No 
 - ROI here is a platform conversion-value-to-spend calculation, not net profit ROI; it excludes product costs, overhead, and other business expenses.
 
 ## Reproducibility
-The corresponding DuckDB SQL is maintained at `sql/01_campaign_channel_performance.sql`. The detailed campaign-level and summary CSV exports were generated in the Colab runtime under `/content/analysis_outputs/`; they still need to be copied into the repository from Colab.
+The corresponding DuckDB SQL is maintained at `sql/01_campaign_channel_performance.sql`. The detailed campaign-level and summary CSV exports are committed in this folder: `campaign_performance.csv`, `campaign_summary.csv`, and `campaign_coverage.csv`, alongside the other supporting analysis exports.
