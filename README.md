@@ -23,16 +23,32 @@ This project analyzes campaign, channel, daily performance, and conversion data 
 
 ## Power BI Dashboard
 
-The interactive report is available here:
-
 [Open the Power BI dashboard file](powerbi/Marketing_Campaign_Performance_Dashboard.pbix)
 
-The report contains four pages:
+The interactive report contains four pages:
 
 1. **Campaign Overview** — headline KPIs, top campaigns by revenue and ROI, and channel distribution.
 2. **Channel Analysis** — channel-level revenue, ROAS, ROI, and revenue-versus-spend comparisons.
 3. **Attribution Analysis** — first-touch versus last-touch conversions and revenue, including channel-level change.
 4. **Executive Summary** — key performance indicators, business insights, and optimization recommendations.
+
+### Dashboard Previews
+
+**1. Campaign Overview**
+
+![Campaign Overview](visuals/Campaign_Overview.png)
+
+**2. Channel Analysis**
+
+![Channel Analysis](visuals/Channel_Analysis.png)
+
+**3. Attribution Analysis**
+
+![Attribution Analysis](visuals/Attribution_Analysis.png)
+
+**4. Executive Summary**
+
+![Executive Summary](visuals/Executive%20Summary.png)
 
 ## Key Dashboard Results
 
@@ -69,7 +85,7 @@ Documented checks include duplicate and primary-key checks, foreign-key validati
 - `sql/` — SQL analysis queries and reconstructed schema
 - `docs/` — data dictionary and project documentation
 - `powerbi/` — Power BI report file
-- `visuals/` — space for exported charts and dashboard previews
+- `visuals/` — exported dashboard page previews
 - `data/` — dataset organization notes and data directories
 
 ## Recommendations
@@ -82,7 +98,7 @@ Documented checks include duplicate and primary-key checks, foreign-key validati
 
 ## Project Status
 
-**Analysis and dashboard completed.** The repository includes the data-inspection notebook, SQL queries, exported analytical reports, attribution comparisons, and the four-page Power BI dashboard. Dashboard screenshots and further documentation can be added as presentation enhancements.
+**Analysis and dashboard completed.** The repository includes the data-inspection notebook, SQL queries, exported analytical reports, attribution comparisons, the four-page Power BI dashboard, and screenshots of all four dashboard pages.
 
 ## Author
 
