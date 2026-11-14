@@ -36,7 +36,7 @@ A comprehensive end-to-end Marketing Analytics and ROI Optimization project that
 |---|---|
 | ![Attribution Analysis](visuals/Attribution_Analysis.png) | ![Executive Summary](visuals/Executive_Summary.png) |
 
-The report includes headline KPIs, top campaigns by revenue and ROI, channel comparisons, first-touch vs last-touch attribution, executive insights, and optimization recommendations.
+The report includes headline KPIs, top campaigns by revenue and ROI, channel comparisons, first-touch vs last-touch attribution, executive insights, and optimization recommendations. Supplementary chart exports are generated separately by the notebook; see [the reports guide](reports/README.md) for how they relate to the canonical CSV exports already stored in this repository.
 
 ## Key results
 
