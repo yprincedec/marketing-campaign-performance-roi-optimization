@@ -1,5 +1,8 @@
 # SQL
 
-The supplied schema defines five related tables. See [the data dictionary](../docs/data_dictionary.md) for declared columns and key relationships.
+This folder contains SQL assets for the marketing campaign analysis:
 
-Validated analytical queries will be added here after the source data has been loaded and inspected.
+- `01_campaign_channel_performance.sql` — campaign and channel performance analysis
+- `reconstructed_marketing_campaigns_schema.sql` — reconstructed relational schema based on the supplied data structure
+
+The schema file is reconstructed documentation and should not be treated as the original source DDL.
