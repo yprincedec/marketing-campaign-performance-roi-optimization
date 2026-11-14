@@ -1,6 +1,6 @@
 # Marketing Campaign Performance & ROI Optimization
 
-> End-to-end marketing analytics project using Python, SQL, and Power BI to evaluate campaign effectiveness, compare channel performance, investigate attribution, and identify opportunities to improve marketing return.
+A comprehensive end-to-end Marketing Analytics and ROI Optimization project that transforms raw campaign data into actionable business insights using Python, SQL, and Power BI. The project covers data extraction and inspection, data cleaning and quality validation, exploratory data analysis, campaign-level and channel-level performance evaluation, marketing spend and revenue analysis, attribution modeling (First-Touch vs Last-Touch), and interactive dashboard development. It evaluates key marketing KPIs such as CTR, CPC, CPM, CPA, ROAS, ROI, conversions, and conversion value to identify high-performing campaigns, uncover underperforming channels, assess budget efficiency, and develop data-driven recommendations for improving marketing effectiveness and profitability.
 
 ## Project at a glance
 
