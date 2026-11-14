@@ -1,9 +1,16 @@
 # Power BI Dashboard
 
-The completed interactive report is stored in this folder:
+## Report file
 
-- `Marketing_Campaign_Performance_Dashboard.pbix`
+- [`Marketing_Campaign_Performance_Dashboard.pbix`](Marketing_Campaign_Performance_Dashboard.pbix)
 
-The report contains four pages: Campaign Overview, Channel Analysis, Attribution Analysis, and Executive Summary. It includes campaign and channel KPIs, revenue and spend comparisons, attribution views, key insights, and business recommendations.
+Open the PBIX file with Power BI Desktop to explore the interactive report.
 
-Open the PBIX file with Power BI Desktop to explore the report.
+## Pages
+
+1. **Campaign Overview** — headline KPIs, top campaigns by revenue and ROI, and channel distribution.
+2. **Channel Analysis** — channel-level revenue, ROAS, ROI, and revenue-versus-spend comparisons.
+3. **Attribution Analysis** — first-touch versus last-touch conversions and revenue, including channel-level change.
+4. **Executive Summary** — performance KPIs, key business insights, and optimization recommendations.
+
+Static previews of all four pages are available in [`visuals/`](../visuals/README.md). Metric definitions and reconciliation caveats are documented in the [data dictionary](../docs/data_dictionary.md).
