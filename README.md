@@ -2,6 +2,12 @@
 
 A comprehensive end-to-end Marketing Analytics and ROI Optimization project that transforms raw campaign data into actionable business insights using Python, SQL, and Power BI. The project covers data extraction and inspection, data cleaning and quality validation, exploratory data analysis, campaign-level and channel-level performance evaluation, marketing spend and revenue analysis, attribution modeling (First-Touch vs Last-Touch), and interactive dashboard development. It evaluates key marketing KPIs such as CTR, CPC, CPM, CPA, ROAS, ROI, conversions, and conversion value to identify high-performing campaigns, uncover underperforming channels, assess budget efficiency, and develop data-driven recommendations for improving marketing effectiveness and profitability.
 
+## Responsible AI-Assisted Development
+
+AI supported learning, problem framing, Python/SQL troubleshooting, understanding marketing metrics and attribution concepts, and organizing project documentation. Suggestions were treated as drafts to inspect and test; project findings are based on the executed analysis and saved outputs. The analyst remains responsible for data validation, metric interpretation, and business recommendations.
+
+[Read the detailed AI usage, workflow, and limitations](AI_USAGE.md).
+
 ## Project at a glance
 
 | Area | Details |
