@@ -20,6 +20,19 @@ AI supported learning, problem framing, Python/SQL troubleshooting, understandin
 | Power BI pages | 4 |
 | Tools | Python, Pandas, SQL, DuckDB, Power BI |
 
+## Dataset & Data Sources
+
+Original source: [SQLShed — Marketing Campaigns SQL Practice Dataset](https://sqlshed.com/practice-datasets/marketing-campaigns/). The publisher describes this as synthetic data released under CC0 1.0. The published table sizes match the project records.
+
+| Table | Records | Purpose |
+|---|---:|---|
+| channels | 9 | Channel reference |
+| campaigns | 600 | Campaign objectives and budgets |
+| ad_groups | 3,000 | Audience and ad-group details |
+| daily_performance | 260,000 | Impressions, clicks, spend and conversion value |
+| conversions | 40,000 | Conversion events and attribution |
+| **Total** | **303,609** | Five relational tables |
+
 ## Business questions
 
 - Which campaigns generate the highest conversion value and return?
@@ -108,6 +121,6 @@ Start with [the data inspection notebook](notebooks/01_data_inspection.ipynb). P
 
 ## Author
 
-**Prince Yadav**
+**Prince Yadav** — [LinkedIn](https://linkedin.com/in/yprincedec)
 
 [GitHub repository](https://github.com/yprincedec/marketing-campaign-performance-roi-optimization)
